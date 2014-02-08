@@ -12,5 +12,5 @@ http.createServer(
 		redirect: true
 	}
 ).listen( port, function() {
-		console.log( 'Listening on port: ' + port );
-	} );
+	console.log( 'Listening on port: ' + port );
+} );
