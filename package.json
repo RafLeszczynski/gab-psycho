@@ -1,0 +1,22 @@
+{
+  "name": "gabinet_olczyk",
+  "version": "0.0.0",
+  "description": "Website for Martyna Olczyk, psychologist and psychotherapist from Cracow in Poland.",
+  "main": "site.js",
+  "dependencies": {
+    "connect": "~2.12.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "psychologist",
+    "psychotherapist"
+  ],
+  "author": "Rafal Leszczynski",
+  "license": "BSD-2-Clause",
+  "engines": {
+    "node": "0.10.x"
+  }
+}
