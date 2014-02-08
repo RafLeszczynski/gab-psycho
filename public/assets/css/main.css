@@ -60,6 +60,19 @@ h1 {
     margin: 0 0 17px;
 }
 
+hgroup h1,
+hgroup h2 {
+    display: inline-block;
+    font-size: 15px;
+    line-height: 20px;
+    width: auto;
+}
+
+hgroup h2 {
+    font-weight: 300;
+    margin: 0;
+}
+
 p,
 ul {
    margin: 0 0 10px;
@@ -103,7 +116,15 @@ dd {
 }
 
 .author span {
+    background: url(../images/signature.png) no-repeat;
     display: block;
+    height: 62px;
+    margin-left: 10px;
+    margin-top: 20px;
+    overflow: hidden;
+    text-indent: 100%;
+    white-space: nowrap;
+    width: 255px;
 }
 
 article {
@@ -140,13 +161,17 @@ dl {
 }
 
 @media all and (min-width: 768px) {
+    hgroup,
     nav {
-        padding: 10px 40px;
+        padding: 15px 40px;
         position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+    nav {
         right: 0;
         text-align: right;
-        top: 0;
-        width: 100%;
     }
 
     nav a {
