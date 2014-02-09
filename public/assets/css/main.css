@@ -115,6 +115,11 @@ nav a:before {
     top: -1px;
 }
 
+nav a:hover:before,
+nav a.active:before {
+    text-decoration: none;
+}
+
 nav a:first-child {
     padding-left: 0;
 }
@@ -176,6 +181,10 @@ article.active {
 }
 
 @media all and (max-width: 479px) {
+
+    nav {
+        width: 100%;
+    }
 
     .fox {
         width: 82px;
