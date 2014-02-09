@@ -49,9 +49,9 @@ a:focus {
 
 h1 {
     clear: both;
-    font-size: 50px;
+    font-size: 30px;
     font-weight: 400;
-    line-height: 70px;
+    line-height: 50px;
     margin: 0 0 17px;
 }
 
@@ -90,6 +90,14 @@ dl {
 
 img {
     border: 0;
+    display: block;
+    margin: 0 auto;
+}
+
+hgroup,
+nav {
+    padding: 10px;
+    text-align: center;
 }
 
 nav a {
@@ -111,6 +119,10 @@ nav a:before {
     top: -1px;
 }
 
+nav a:first-child {
+    padding-left: 0;
+}
+
 nav a:first-child:before {
     content: "";
 }
@@ -120,6 +132,7 @@ hgroup h2 {
     display: inline-block;
     font-size: 15px;
     line-height: 20px;
+    margin-bottom: 5px;
     width: auto;
 }
 
@@ -128,33 +141,29 @@ hgroup h2 {
     margin: 0;
 }
 
+hgroup span {
+    display: none;
+}
+
 article {
     box-sizing: border-box;
     -moz-box-sizing: border-box;
     clear: both;
     margin-bottom: 50px;
     overflow: hidden;
-    transition: opacity .5s ease-in-out;
-    -moz-transition: opacity .5s ease-in-out;
-    -webkit-transition: opacity .5s ease-in-out;
+    padding: 10px;
     width: 100%;
 }
 
 article.hidden {
-    height: 0;
-    margin: 0;
-    opacity: 0;
+    display: none;
 }
 
 article.active {
-    height: auto;
-    opacity: 1;
-    padding: 20px;
+    display: block;
 }
 
 .author {
-    float: right;
-    margin-right: 90px;
     margin-top: 20px;
     width: auto;
 }
@@ -163,7 +172,6 @@ article.active {
     background: url(../images/signature.png) no-repeat;
     display: block;
     height: 62px;
-    margin-left: 10px;
     margin-top: 20px;
     overflow: hidden;
     text-indent: 100%;
@@ -171,13 +179,44 @@ article.active {
     width: 255px;
 }
 
+@media all and (max-width: 479px) {
+
+    .fox {
+        width: 82px;
+        height: auto;
+    }
+
+    .portrait {
+        width: 200px;
+        height: auto;
+    }
+
+    .map {
+        width: 280px;
+        height: auto;
+    }
+}
+
 @media all and (min-width: 768px) {
+    h1 {
+       font-size: 50px;
+       line-height: 70px;
+    }
+
     hgroup,
     nav {
         padding: 15px 20px;
         position: absolute;
         left: 0;
         top: 0;
+    }
+
+    hgroup {
+        text-align: left;
+    }
+
+    hgroup span {
+        display: inline;
     }
 
     nav {
@@ -187,6 +226,7 @@ article.active {
 
     article {
         margin: 101px auto 0;
+        padding: 20px;
     }
 
     article > div {
@@ -219,6 +259,15 @@ article.active {
     .fox {
         margin-top: 18px;
     }
+
+    .author {
+        float: right;
+        margin-right: 90px;
+    }
+
+    .author span {
+        margin-left: 10px;
+    }
 }
 
 @media all and (min-width: 1024px) {
@@ -241,7 +290,7 @@ article.active {
     }
 
     .fox {
-        margin: 18px 80px 0 140px;
+        margin: 18px 80px 0 130px;
     }
 
     .portrait {
