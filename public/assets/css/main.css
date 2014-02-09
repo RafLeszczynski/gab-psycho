@@ -43,10 +43,6 @@ a.active {
     text-decoration: underline;
 }
 
-a:focus {
-    outline: thin dotted;
-}
-
 h1 {
     clear: both;
     font-size: 30px;
