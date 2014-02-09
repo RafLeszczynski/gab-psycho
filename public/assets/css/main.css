@@ -110,14 +110,11 @@ nav a:before {
     content: "/";
     font-size: 20px;
     font-weight: 300;
+    height: 19px;
     left: 10px;
+    overflow: hidden;
     position: absolute;
     top: -1px;
-}
-
-nav a:hover:before,
-nav a.active:before {
-    text-decoration: none;
 }
 
 nav a:first-child {
@@ -130,16 +127,17 @@ nav a:first-child:before {
 
 hgroup h1,
 hgroup h2 {
-    display: inline-block;
-    font-size: 15px;
-    line-height: 20px;
+    font-size: 20px;
+    line-height: 21px;
     margin-bottom: 5px;
     width: auto;
 }
 
 hgroup h2 {
+    color: #a75f12;
     font-weight: 300;
     margin: 0;
+    padding-top: 2px;
 }
 
 hgroup span {
@@ -204,8 +202,8 @@ article.active {
 
 @media all and (min-width: 768px) {
     h1 {
-       font-size: 50px;
-       line-height: 70px;
+       font-size: 40px;
+       line-height: 60px;
     }
 
     hgroup,
@@ -230,7 +228,7 @@ article.active {
     }
 
     article {
-        margin: 101px auto 0;
+        margin: 121px auto 0;
         padding: 20px;
     }
 
@@ -308,7 +306,7 @@ article.active {
     }
 
     article:nth-of-type(2) > h1 {
-        padding-left: 100px;
+        padding-left: 150px;
     }
 
     dl {

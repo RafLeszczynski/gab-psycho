@@ -9,14 +9,10 @@ var connect = require( 'connect' ),
 
 http.createServer(
 	connect()
-		.use( connect.favicon( __dirname + root + faviconPath ) )
+		.use( connect.favicon( __dirname + root + faviconPath, { maxAge: 2628000000 } ) )
 		.use( connect.logger() )
 		.use( connect.compress() )
-		.use( connect.static( __dirname + root ) ),
-	{
-		redirect: true
-//		maxAge: 2628000000
-	}
+		.use( connect.static( __dirname + root, { redirect: true, maxAge: 2628000000 } ) )
 ).listen( port, function() {
 	console.log( 'Listening on port: ' + port );
 } );
