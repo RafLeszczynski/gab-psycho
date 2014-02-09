@@ -1,3 +1,5 @@
+require('newrelic');
+
 var connect = require( 'connect' ),
 	http = require( 'http'),
 
