@@ -5,7 +5,6 @@
 	var doc = window.document,
 		loc = window.location,
 		hist = window.history,
-		hash = loc.hash,
 
 		//cached selectors
 		nav = doc.getElementById( 'nav' ),
@@ -24,16 +23,14 @@
 	} );
 
 	// always set home section as default if no || wrong hash is given
-	if ( !hash || !sections.hasOwnProperty( hash ) ) {
-		hist.pushState( null, null, HOME );
-		hash = HOME;
-	}
+	loc.hash = checkHash( loc.hash, sections, HOME );
 
 	// initialize page section
-	switchSection( pageSections, hash );
+	switchSection( pageSections, loc.hash );
 
 	// attach events
 	window.addEventListener( 'hashchange', function() {
+		loc.hash = checkHash( loc.hash, sections, HOME);
 		switchSection( pageSections, loc.hash );
 	} );
 
@@ -48,6 +45,23 @@
 			switchSection( pageSections, loc.hash );
 		}
 	} );
+
+	/**
+	 * Compare current hash with given hash table and if no match found return default hash
+	 *
+	 * @param hash {string} - current location hash
+	 * @param hashTable {object} - object with suppoerted hashes
+	 * @param defaultHash {string} - default hash to be applied to window.location
+	 * @returns {string} - location hash
+	 */
+
+	function checkHash( hash, hashTable, defaultHash ) {
+		if ( !hash || !hashTable.hasOwnProperty( hash ) ) {
+			return defaultHash;
+		} else {
+			return hash;
+		}
+	}
 
 	/**
 	 * Simple loop through DOM element with callback function run for every element in a loop
