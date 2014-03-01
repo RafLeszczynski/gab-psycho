@@ -90,10 +90,29 @@ img {
     margin: 0 auto;
 }
 
-hgroup,
-nav {
-    padding: 10px;
-    text-align: center;
+header {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	padding: 10px 0;
+	position: absolute;
+	left: 0;
+	text-align: center;
+	top: 0;
+	width: 100%;
+}
+header h1 {
+	font-size: 20px;
+	line-height: 21px;
+	margin-bottom: 20px;
+	width: auto;
+}
+
+header span {
+	color: #a75f12;
+	display: block;
+	font-weight: 300;
+	margin: 0;
+	padding-top: 7px;
 }
 
 nav a {
@@ -101,8 +120,9 @@ nav a {
 }
 
 nav a {
+	display: inline-block;
     font-size: 15px;
-    padding-left: 30px;
+    margin-left: 30px;
     position: relative;
 }
 
@@ -111,37 +131,18 @@ nav a:before {
     font-size: 20px;
     font-weight: 300;
     height: 19px;
-    left: 10px;
+    left: -20px;
     overflow: hidden;
     position: absolute;
     top: -1px;
 }
 
 nav a:first-child {
-    padding-left: 0;
+    margin-left: 0;
 }
 
 nav a:first-child:before {
     content: "";
-}
-
-hgroup h1,
-hgroup h2 {
-    font-size: 20px;
-    line-height: 21px;
-    margin-bottom: 5px;
-    width: auto;
-}
-
-hgroup h2 {
-    color: #a75f12;
-    font-weight: 300;
-    margin: 0;
-    padding-top: 2px;
-}
-
-hgroup span {
-    display: none;
 }
 
 article {
@@ -150,7 +151,7 @@ article {
     clear: both;
     margin-bottom: 50px;
     overflow: hidden;
-    padding: 10px;
+	padding: 120px 20px 20px;
     width: 100%;
 }
 
@@ -180,7 +181,7 @@ article.active {
 
 @media all and (max-width: 479px) {
 
-    nav {
+	nav {
         width: 100%;
     }
 
@@ -206,30 +207,22 @@ article.active {
        line-height: 60px;
     }
 
-    hgroup,
-    nav {
-        padding: 15px 20px;
-        position: absolute;
-        left: 0;
-        top: 0;
+    header {
+        padding: 15px 40px;
     }
 
-    hgroup {
+	header h1 {
+		float: left;
         text-align: left;
     }
 
-    hgroup span {
-        display: inline;
-    }
-
     nav {
-        right: 0;
         text-align: right;
     }
 
     article {
-        margin: 121px auto 0;
-        padding: 20px;
+        margin: 0 auto;
+        padding: 141px 20px 20px;
     }
 
     article > div {
@@ -274,12 +267,6 @@ article.active {
 }
 
 @media all and (min-width: 1024px) {
-    hgroup,
-    nav {
-        padding-left: 40px;
-        padding-right: 40px;
-    }
-
     article {
         width: 1024px;
     }
