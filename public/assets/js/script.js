@@ -4,7 +4,6 @@
 	// cache globals to local variables
 	var doc = window.document,
 		loc = window.location,
-		hist = window.history,
 
 		//cached selectors
 		nav = doc.getElementById( 'nav' ),
@@ -15,11 +14,11 @@
 		sections = {},
 
 		// Constants
-		HOME = '#/start';
+		HOME = '#start';
 
 	// store page sections from navigation links
 	loopThroughDOM( navLinks, function( element ) {
-		sections[( element.getAttribute( 'data-section' ) )] = true;
+		sections[( element.getAttribute( 'href' ) )] = true;
 	} );
 
 	// always set home section as default if no || wrong hash is given
@@ -37,13 +36,9 @@
 	nav.addEventListener( 'click', function( event ) {
 		var target = event.target;
 
-		if ( target.nodeName === 'A' ) {
-			event.preventDefault();
-
+		if ( target.nodeName === 'A' && target.className !== 'active' ) {
 			makeNavLinkActive( navLinks, target );
-			hist.pushState( null, target.getAttribute('title'), target.getAttribute( 'data-section' ) );
-			switchSection( pageSections, loc.hash );
-		}
+        }
 	} );
 
 	/**
@@ -56,11 +51,7 @@
 	 */
 
 	function checkHash( hash, hashTable, defaultHash ) {
-		if ( !hash || !hashTable.hasOwnProperty( hash ) ) {
-			return defaultHash;
-		} else {
-			return hash;
-		}
+        return (  !hash || !hashTable.hasOwnProperty( hash ) ) ? defaultHash : hash;
 	}
 
 	/**
@@ -102,12 +93,13 @@
 	 */
 
 	function switchSection( pageSections, hash ) {
-		var	activeSection = doc.getElementById( hash.slice( 2 ) );
+		var	activeSection = doc.getElementById( hash.slice( 1 ) );
 
 		loopThroughDOM( pageSections, function( element ) {
 			element.className = 'hidden';
 		} );
 
 		activeSection.className = 'active';
+        window.scrollTo( 0,0 );
 	}
 }( window );
